@@ -494,45 +494,175 @@ function openTab(evt, tabName) {
         // console.log(res)
 
     } else if (tabName == "Links") {
-        var glinks = document.links;
-        var k;
-
-        for (k = 0; k < glinks.length; ki++) {
-            // console.log(glinks[i].className);
-            // console.log(glinks.length);
-            if (glinks[k].classList.contains("atb-hide-ifempty") || glinks[k].classList.contains("wtu")) {
 
 
+        let listOfLinks = document.getElementsByTagName('a');
+        var finalListOfLinks = [];
+        console.clear();
+        console.log(listOfLinks);
+        console.log(`length of links = ${listOfLinks.length}`);
+
+        let count = 0;
+        for (let x of listOfLinks) {
+            // console.log(x)
+
+            if (x.className === "atb-hide-ifempty" || x.className === "wtu" || x.innerHTML === "") {
+                console.log("class in tooollll")
+                console.log(x)
             } else {
-                console.log(glinks[k].className);
 
-                //         var nodel = document.createElement("LI");
-                //         var kspan = document.createElement("SPAN");
-                //         kspan.classname = "linkBlock";
-                //         kspan.innerHTML = '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAE2UlEQVRYha2Wa2yTZRTHf8/bt91AxjZW2u5i5Loqu7PNdRsIhqiJMSHBy1AILIpZFGMCMaImxAQvgS/6ZRCQiTMM3AyBxA+aqChy24V1cxsYMhzRubq2u7CBjG3t3scPo0vXdVvb8f/2Pue853fe9zzn5AjCVE5TcZJ3zJstFCUV5PzxUzEkNa3dILzN9jx7dzjxRChO6XUFZp2qlEnkZuCxWUJeE2g1Uq870pp12T2nBDJbMh+SnvlvAR8IWBhKsn66K6A82is/rbfV3w47gcxGWwFwGkgKExwoh5BiU0t+bUMwoxLsMMtuKwF+fQBwgGQp5PnMK4Xbghmn/IGMxsIXBbImmG2OkhKxtS2v9uS0CWTYC3KFFOeB+ZEQLAYzpeatOEedVLlr8EpvoMuwkGKdfzkmErBeLI6Jih67ToS/PdFg4Zj1EEmGRAAuDF5id8f7jEpPoGsX+qFHW7Na74LfHTBEe9+JFP5wVDKV1sMkqAlU95yia8TB2thi9i/bhyrUQPcU4Zm32/cgYLzPFVX8CSyIBF6RepB4NZ5dHXu4dLsOoz6BitSDLI1+hLMD53j35t7ActxBr6xozbrsVgB0qlL2oOAAvZ4+drTvpGvEwYa49Ww1lQS+GoNX2wH3S3B/woWlRIOZL1MP+cHrJ9l7PX3U3h6/axaDeWoAyWYAJaepOIlZx+tUvWrZhtlg4lTvGTocCnvnVZL7X+mEfW1sERuNz+EcdVHpOhEsRHpaQ75FlZonZ5p5NKPcnh4AdH1WyjOeYWVCHFyDpntfsyaukM+W76ff08+O9p04R13BQgidTs1WJcqyUKGJBjOvWbbj9vRywl2N2mflycQsVibE0dE/QEXPF6xJmQz/Z8QxbTypsULVIDaUkee7cL566m+lss6cidUYT0f/IFdcf1OaZmOTcWNIcACBjJ3SpDPBF+kXcdL9Leok+AA/Olp4I2MdkIVr1B0S3CdVgUEZInxXxx7au6A8/amJL//Z0crxsX14HC9gMiym0llFd/CaT5FU5IAq0G7KaS5hIPziYB17TZVYjfHc6BvA7v6Lsown8Pz7Eke7K0OC+kugdKg6xpq0IAlYfH2uj78PrwXge/c5AI66j1C6qhDIxqhPCBsOSM2jNSv2PHu3hD8CraXmLZgNJs70fjcBB7DHfMXHQ6WsSJE8v3gjzlEXXzmrIkmg7aqt3qUAKMjqQKuvjsULbRj1xkm2NXGFfL78wGx9PotE9TgbUBTDYQmT9rYqdzU/3fqFlKhkKlLLJ5JYG1sUcp/PoDuaVzsGoANwHukcspSlRAHrfR4SydmB31gWvYTcmBw2xK1jefRS3k55c65wkHzUVlD/A/gtJGnX1i/Q3Ru+DiT7+ypC4ZMlH/LsoqcBJvq8c6QrMjh0oh9a5VtIJg3BzEbbauACASuZTujYYirBbDBx3PVNhDUHZlrJfMpoLHxFIKuC2eYoKQQvt+TW1fgfThkAbXm1J4VgMzD0AOHDQsrtgXCY4SuzG4ryNUU7DaTMEd4phdzUlltvD2acdhH4/fHLV/R4rBLeAwYjAN8VcGBkWJc+HRxCrHNmS5GJUe11BCVAxgyuEmhDUKMT+qPNqy/0zBY77IuW1pBv0enUbCHlSimIARCSO1KIG5pHa75qqw+rRf4Hrrf6e/Gqy5AAAAAASUVORK5CYII=" alt="link icon">';
-                //         var kname = document.createElement("SPAN");
-                //         kname.className = "linkName";
-                //         kname.innerHTML = '<a href="' + glinks[k].href + '"target="_blank>"' + glinks[k].innerText + '</a>';
-                //         nodel.appendChild(kspan);
-                //         nodel.appendChild(kname);
-                //         lil.appendChild(nodel);
-
-
-
-                // }
-                // if (glinks[i].className !== "atb-hide-ifempty" || glinks[i].className !== "wtu") {
-
-
-
-
-
+                finalListOfLinks[count] = x;
+                count++;
             }
-
-
 
         }
 
+
+
+
+
+        console.log("------------------------------------------------------")
+        console.log(finalListOfLinks)
+        for (let x of finalListOfLinks) {
+            // console.clear()
+            // console.log(x)
+            let listNode = document.createElement('li')
+            let spanNode = document.createElement('span')
+            let anchorTag = document.createElement('a')
+            anchorTag.setAttribute('href', x)
+            anchorTag.innerHTML = x.innerHTML;
+            if (x.getElementsByTagName('span'))
+                spanNode.append(anchorTag)
+            listNode.append(spanNode)
+            lil.append(listNode)
+        }
+
+
+
+
+        // console.log("========")
+        // lil.innerHTML = "";
+        // var glinks = document.getElementsByTagName("a");
+        // let length = glinks.length;
+        // console.log(glinks.length)
+        // var k = 0;
+        // for (k; k < length; k++) {
+
+        // var listNode = document.createElement('li');
+        // var spanNode = document.createElement('span');
+        // var anchorTag = document.createElement('a');
+        // if(glinks[k].classList.contains("atb-hide-ifempty")||glinks[k].classList.contains("wtu")||glinks[k].innerText===""){
+        //     con
+        // }
+        // console.log("all bs");
+
+        // if (glinks[k].className === "atb-hide-ifempty" || glinks[k].className === "wtu") {
+        //     // console.log("no use")
+        // } else {
+        //     if (glinks[k].innerText !== "") {
+        //         var hrefValue = glinks[k].href;
+        //         // var arr = [];
+        //         // arr.push(hrefValue);
+
+        //         // console.log(hr);
+
+
+        //         var nodel = document.createElement("LI");
+
+        //         var sp = document.createElement("SPAN");
+        //         sp.className = "linkName";
+        //         var anchorTag = document.createElement("a");
+        //         // console.log(hrefValue);
+
+
+        //         anchorTag.setAttribute("href", hrefValue);
+        //         anchorTag.setAttribute("target", "_blank");
+
+
+        //         anchorTag.innerText = glinks[k].innerText;
+        //         sp.appendChild(anchorTag);
+        //         nodel.appendChild(sp);
+        //         lil.appendChild(nodel);
+
+        // anchorTag.setAttribute('href', hrefValue);
+        // listNode.append(anchorTag);
+        // lil.append(listNode);
+        //         }
+        // }
+        // }
+
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+        // lil.innerHTML = "";
+        // var glinks = document.links;
+        // var k;
+
+        // for (k = 0; k < glinks.length; k++) {
+        //     // console.log(glinks[i].className);
+        //     // console.log(glinks.length);
+        //     if (glinks[k].classList.contains("atb-hide-ifempty") || glinks[k].classList.contains("wtu") || glinks[k].innerText === "") {
+
+
+        //     } else {
+        //         console.log(glinks[k]);
+        //         // console.log(glinks.length);
+
+        //         var nodel = document.createElement("LI");
+        //         var sp = document.createElement("SPAN");
+        //         var kspan = document.createElement("IMG");
+        //         // var kspan = sp.createElement("img");
+        //         // kspan.classname = "linkBlock";
+        //         // kspan.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAE2UlEQVRYha2Wa2yTZRTHf8/bt91AxjZW2u5i5Loqu7PNdRsIhqiJMSHBy1AILIpZFGMCMaImxAQvgS/6ZRCQiTMM3AyBxA+aqChy24V1cxsYMhzRubq2u7CBjG3t3scPo0vXdVvb8f/2Pue853fe9zzn5AjCVE5TcZJ3zJstFCUV5PzxUzEkNa3dILzN9jx7dzjxRChO6XUFZp2qlEnkZuCxWUJeE2g1Uq870pp12T2nBDJbMh+SnvlvAR8IWBhKsn66K6A82is/rbfV3w47gcxGWwFwGkgKExwoh5BiU0t+bUMwoxLsMMtuKwF+fQBwgGQp5PnMK4Xbghmn/IGMxsIXBbImmG2OkhKxtS2v9uS0CWTYC3KFFOeB+ZEQLAYzpeatOEedVLlr8EpvoMuwkGKdfzkmErBeLI6Jih67ToS/PdFg4Zj1EEmGRAAuDF5id8f7jEpPoGsX+qFHW7Na74LfHTBEe9+JFP5wVDKV1sMkqAlU95yia8TB2thi9i/bhyrUQPcU4Zm32/cgYLzPFVX8CSyIBF6RepB4NZ5dHXu4dLsOoz6BitSDLI1+hLMD53j35t7ActxBr6xozbrsVgB0qlL2oOAAvZ4+drTvpGvEwYa49Ww1lQS+GoNX2wH3S3B/woWlRIOZL1MP+cHrJ9l7PX3U3h6/axaDeWoAyWYAJaepOIlZx+tUvWrZhtlg4lTvGTocCnvnVZL7X+mEfW1sERuNz+EcdVHpOhEsRHpaQ75FlZonZ5p5NKPcnh4AdH1WyjOeYWVCHFyDpntfsyaukM+W76ff08+O9p04R13BQgidTs1WJcqyUKGJBjOvWbbj9vRywl2N2mflycQsVibE0dE/QEXPF6xJmQz/Z8QxbTypsULVIDaUkee7cL566m+lss6cidUYT0f/IFdcf1OaZmOTcWNIcACBjJ3SpDPBF+kXcdL9Leok+AA/Olp4I2MdkIVr1B0S3CdVgUEZInxXxx7au6A8/amJL//Z0crxsX14HC9gMiym0llFd/CaT5FU5IAq0G7KaS5hIPziYB17TZVYjfHc6BvA7v6Lsown8Pz7Eke7K0OC+kugdKg6xpq0IAlYfH2uj78PrwXge/c5AI66j1C6qhDIxqhPCBsOSM2jNSv2PHu3hD8CraXmLZgNJs70fjcBB7DHfMXHQ6WsSJE8v3gjzlEXXzmrIkmg7aqt3qUAKMjqQKuvjsULbRj1xkm2NXGFfL78wGx9PotE9TgbUBTDYQmT9rYqdzU/3fqFlKhkKlLLJ5JYG1sUcp/PoDuaVzsGoANwHukcspSlRAHrfR4SydmB31gWvYTcmBw2xK1jefRS3k55c65wkHzUVlD/A/gtJGnX1i/Q3Ru+DiT7+ypC4ZMlH/LsoqcBJvq8c6QrMjh0oh9a5VtIJg3BzEbbauACASuZTujYYirBbDBx3PVNhDUHZlrJfMpoLHxFIKuC2eYoKQQvt+TW1fgfThkAbXm1J4VgMzD0AOHDQsrtgXCY4SuzG4ryNUU7DaTMEd4phdzUlltvD2acdhH4/fHLV/R4rBLeAwYjAN8VcGBkWJc+HRxCrHNmS5GJUe11BCVAxgyuEmhDUKMT+qPNqy/0zBY77IuW1pBv0enUbCHlSimIARCSO1KIG5pHa75qqw+rRf4Hrrf6e/Gqy5AAAAAASUVORK5CYII="
+
+        //         // kspan.alt = "link icon";
+
+        //         // sp.appendChild(kspan);
+        //         var kname = document.createElement("a");
+        //         // kname.setAttribute("href", glinks[k].href);
+
+        //         var spa = document.createElement("SPAN");
+        //         spa.className = "linkName";
+        //         // console.log(glinks[k].attributes.href);
+
+        //         // kname.setAttribute("href", glinks[k].href);
+        //         // kname.setAttribute("target", "_blank");
+
+        //         kname.innerText = " " + glinks[k].innerText;
+        //         // kname.setAttribute("href", "sample");
+        //         sp.appendChild(kname);
+        //         nodel.appendChild(sp);
+        //         // // nodel.appendChild(spa);
+        //         lil.appendChild(nodel);
+
+
+
+
+        //     }
+        //     // if (glinks[i].className !== "atb-hide-ifempty" || glinks[i].className !== "wtu") {
+
+
+
+
+
+        // }
+        // console.log(lil.length);
+
+
+
     }
+
+
 
     // con.innerHTML = prodHTML
 
