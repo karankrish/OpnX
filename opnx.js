@@ -193,7 +193,7 @@ MicAccessTool.prototype.pageStructure = function(o) {
         var modal = document.getElementById("myModal");
         modal.style.display = "flex";
         var span = document.getElementsByClassName("close")[0];
-        var but = document.getElementsByClassName("tablinks")
+        // var but = document.getElementsByClassName("tablinks")
 
 
 
@@ -437,7 +437,7 @@ window.onload = function() {
 
 function openTab(evt, tabName) {
     // console.clear();
-    var prodHTML = "";
+
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -496,7 +496,7 @@ function openTab(evt, tabName) {
     } else if (tabName == "Links") {
 
 
-        let listOfLinks = document.getElementsByTagName('a');
+        let listOfLinks = document.links;
         var finalListOfLinks = [];
         console.clear();
         console.log(listOfLinks);
@@ -523,16 +523,55 @@ function openTab(evt, tabName) {
 
         console.log("------------------------------------------------------")
         console.log(finalListOfLinks)
+        console.clear();
         for (let x of finalListOfLinks) {
-            // console.clear()
+            var insideTags;
+            var y;
+            var z;
+
             // console.log(x)
             let listNode = document.createElement('li')
             let spanNode = document.createElement('span')
             let anchorTag = document.createElement('a')
             anchorTag.setAttribute('href', x)
-            anchorTag.innerHTML = x.innerHTML;
-            if (x.getElementsByTagName('span'))
-                spanNode.append(anchorTag)
+
+            if (x.innerText === "") {
+                // var insideTags = [];
+                insideTags = x.children;
+                console.log("-----------------------------")
+
+                for (y = 0; y < insideTags.length; y++) {
+
+                    console.log(insideTags[y].tagName)
+                    if ((x.querySelector("img"))) {
+                        z = x.querySelector("img");
+                        console.log("yes");
+                        if (z.alt === "") {
+                            console.log("IMAGE");
+                            anchorTag.innerHTML = "IMAGE"
+                        } else {
+                            console.log(y.alt);
+                            anchorTag.innerHTML = z.alt;
+                        }
+
+                    } else if (insideTags[y].innerText === "") {
+                        // console.log("move on");
+                        console.log("::::::::::")
+                        console.log(insideTags[y].innerText);
+                    } else {
+                        console.log(";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;")
+                        console.log(insideTags[y].innerText);
+                        console.log(insideTags[y].innerText)
+                        anchorTag.innerHTML = insideTags[y].innerText
+                    }
+
+                }
+            } else {
+                anchorTag.innerText = x.innerText;
+            }
+
+            // anchorTag.innerHTML = x.innerHTML;
+            spanNode.append(anchorTag)
             listNode.append(spanNode)
             lil.append(listNode)
         }
@@ -665,7 +704,6 @@ function openTab(evt, tabName) {
 
 
     // con.innerHTML = prodHTML
-
 
 
 
