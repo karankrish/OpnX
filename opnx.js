@@ -399,7 +399,7 @@ window.onload = function() {
 // document.getElementById("headings-01").click();
 
 function onDef() {
-    openTab(event, "Headings");
+    openTab(event, "Links");
 }
 
 function openTab(evt, tabName) {
@@ -466,7 +466,7 @@ function openTab(evt, tabName) {
                                 headanchor.addEventListener('click', closeModal);
 
                             } else {
-                                headanchor.setAttribute('href', (headings[j].id));
+                                headanchor.setAttribute('href', (hash + headings[j].id));
                                 headanchor.addEventListener('click', closeModal);
                                 // headanchor.onclick = document.getElementById("myModal").style.display = "none";
                             }
@@ -520,7 +520,7 @@ function openTab(evt, tabName) {
         for (let x of listOfLinks) {
             // console.log(x)
 
-            if (x.className === "atb-hide-ifempty" || x.className === "wtu" || x.innerHTML === "" || x.innerHTML === "OK" || x.innerHTML === "Ok" || x.href === "javascript:void(0)") {
+            if (x.className === "atb-hide-ifempty" || x.className === "wtu" || x.className === "headName" || x.innerHTML === "" || x.innerHTML === "OK" || x.innerHTML === "Ok" || x.href === "javascript:void(0)") {
                 // console.log("class in tooollll")
                 // console.log(x)
             } else {
